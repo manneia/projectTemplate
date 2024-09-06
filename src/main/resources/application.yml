@@ -1,0 +1,10 @@
+# 应用服务 WEB 访问端口
+server:
+  servlet:
+    # 访问根路径
+    context-path: /manneia
+  port: 18088
+spring:
+  # 启动读取的配置文件
+  profiles:
+    active: dev

@@ -1,0 +1,40 @@
+server:
+  servlet:
+    context-path: /manneia
+  port: 18089
+spring:
+  web:
+    resources:
+      add-mappings: true
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/manneia_user?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  application:
+    name: projectTemplate
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: 'default'
+      display-name: 'api文档'
+      paths-to-match: '/**'
+      packages-to-scan: com.manneia.template.controller
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn
+    enable-document-manage: true
+    enable-version: true
+mybatis-plus:
+  #指定Mybatis的Mapper文件
+  mapper-locations: classpath*:mapper/*.xml
+  #指定Mybatis的实体目录
+  type-aliases-package: com.manneia.model.domain
+  configuration:
+    map-underscore-to-camel-case: true
