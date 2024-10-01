@@ -38,3 +38,6 @@ mybatis-plus:
   type-aliases-package: com.manneia.model.domain
   configuration:
     map-underscore-to-camel-case: true
+template:
+  username: admin
+  password: 123456
